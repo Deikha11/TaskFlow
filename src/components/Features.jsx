@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 
+// Qaybta sawirada la soo dhex radday (Imported Images)
+import boardImg from '../assets/feature-boards.png';
+import analyticsImg from '../assets/feature-analytics (2).png';
+import chatImg from '../assets/feature-chat.png';
+
 export default function Features() {
   const [activeTab, setActiveTab] = useState('boards');
 
@@ -7,17 +12,20 @@ export default function Features() {
     boards: {
       title: "Agile Task Boards",
       desc: "Organize your workflow into customizable columns. Drag and drop features, assign owners, set custom estimates, and move cards safely across custom pipelines.",
-      imgPrompt: "AI Image: feature-boards.png (Prompt: A beautiful modern Kanban dashboard interface layout, light pastel colors, highly-productive look, minimalist ui design 3d render style)",
+      image: boardImg,
+      alt: "Agile Task Boards Interface"
     },
     analytics: {
       title: "Advanced Data Reports",
       desc: "Track velocity charts, burn-down pipelines, and team capacity real-time. Make optimized decisions based on predictive automated reports generated weekly.",
-      imgPrompt: "AI Image: feature-analytics.png (Prompt: Glassmorphism data charts and sleek analytics graphs UI design component, modern SaaS dashboard elements, neon gradients, isolated on white background)",
+      image: analyticsImg,
+      alt: "Advanced Data Reports Interface"
     },
     chat: {
       title: "Contextual Team Chat",
       desc: "Stop bouncing back and forth to Slack. Comment directly inside open issues, mention teammates natively, and share design documentation securely inside code spaces.",
-      imgPrompt: "AI Image: feature-chat.png (Prompt: Modern messaging software chat interface concept UI mockup, sleek bubbles, avatar icons, abstract layout, tech brand look)",
+      image: chatImg,
+      alt: "Contextual Team Chat Interface"
     }
   };
 
@@ -62,13 +70,13 @@ export default function Features() {
             </ul>
           </div>
           
-          <div className="bg-white rounded-2xl border border-slate-200/60 p-6 shadow-xl flex flex-col justify-center items-center text-center h-64 relative overflow-hidden">
-            {/* Real placeholder structure for your AI images */}
-            <span className="text-xs text-indigo-500 font-bold tracking-wider mb-2 uppercase block">AI Image Placeholder Below</span>
-            <span className="text-slate-400 font-medium text-xs max-w-xs block px-4">{featuresData[activeTab].imgPrompt}</span>
-            <div className="absolute inset-0 bg-indigo-500/5 backdrop-blur-[2px] flex items-center justify-center font-bold text-indigo-900/40 text-sm">
-               [Replace with your generated AI Image file]
-            </div>
+          <div className="bg-white rounded-2xl border border-slate-200/60 p-2 shadow-xl flex flex-col justify-center items-center text-center h-80 relative overflow-hidden">
+            
+            <img 
+              src={featuresData[activeTab].image} 
+              alt={featuresData[activeTab].alt} 
+              className="w-full h-full object-cover rounded-xl"
+            />
           </div>
         </div>
 

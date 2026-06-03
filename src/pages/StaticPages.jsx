@@ -22,9 +22,8 @@ export const About = () => (
           </p>
         </div>
         <div>
-          {/* Sawirka kooxda: Hubi inuu ku jiro public/images/about-team.jpg */}
           <img 
-            src="/images/about-team.jpg" 
+            src="/images/about-team.png" 
             alt="Our Team" 
             className="rounded-2xl shadow-xl w-full h-auto object-cover bg-slate-100 min-h-[300px]" 
           />
